@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <ListBox ItemsSource="{Binding ListGoods}"
+                 SelectedItem="{Binding SelectedGood}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path =Name}"/>
+                        <TextBlock Text="{Binding Path =Price}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button 
+            Click="Button_Click"
+            x:Name="btn"
+            Content="Добавить" HorizontalAlignment="Left" Margin="480,372,0,0" VerticalAlignment="Top" Height="23" Width="268"/>
+        <Button 
+            Click="btn_Copy_Click"
+            x:Name="btn_Copy"
+            Content="Редактировать" HorizontalAlignment="Left" Margin="49,372,0,0" VerticalAlignment="Top" Height="23" Width="268"/>
+        <Button
+            Click="btn_delete_Click"
+            x:Name="btn_delete"
+            Content="Удалить" HorizontalAlignment="Left" Margin="248,332,0,0" VerticalAlignment="Top" Height="23" Width="268"/>
+
+    </Grid>
+</Window>
